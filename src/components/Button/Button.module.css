@@ -1,0 +1,15 @@
+.root {
+  width: 10rem;
+  height: 2rem;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:disabled.root {
+  border: 1px solid var(--contrast-color);
+}

@@ -1,0 +1,84 @@
+.root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: min(25rem, 100%);
+  height: 70%;
+  border-radius: var(--border-radius);
+  background: linear-gradient(145deg, #8de6c4b3, #a8ffe9b3);
+  box-shadow: 8px 8px 25px #85d9b9, -8px -8px 25px #b5fffb;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.container {
+  padding: 0 1rem;
+  flex-basis: 3rem;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-color);
+  transition: 0.5s cubic-bezier(0, 0, 1, 0.99), background 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.container.open {
+  flex-basis: 100%;
+  background: transparent;
+  padding-top: 3rem;
+  cursor: default;
+}
+
+.container h3 {
+  flex-basis: 3rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.bubble {
+  position: absolute;
+  width: 10rem;
+  height: 4rem;
+  background: #d3d3d3;
+  border-radius: 1rem;
+}
+
+.bubble::after {
+  content: "...";
+  font-size: 6rem;
+  color: var(--primary-color);
+  position: absolute;
+  top: -87%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bubble::before {
+  position: absolute;
+  content: "";
+  bottom: -49%;
+  background: #d3d3d3;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  left: 25%;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  transform: translateX(-50%);
+}
+
+.bubble:nth-child(odd):before {
+  left: 80%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}

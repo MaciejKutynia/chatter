@@ -1,0 +1,10 @@
+.logo {
+  height: 10vh;
+  width: max-content;
+  margin: auto;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
