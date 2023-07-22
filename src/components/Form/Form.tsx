@@ -21,12 +21,15 @@ const Form = (props: FormProps) => {
     e.preventDefault();
     const target = e.target as HTMLFormElement;
 
-    const values: Values = [...target].reduce((acc, el: HTMLInputElement) => {
-      if (el.value) {
-        return { ...acc, [el.name]: el.value };
+    const values: Values = {};
+
+    for (let i = 0; i < target.length; i++) {
+      const input = target[i] as HTMLInputElement;
+      if (input.value) {
+        values[input.name] = input.value;
       }
-      return acc;
-    }, {});
+    }
+
     onSubmit(values);
   };
 

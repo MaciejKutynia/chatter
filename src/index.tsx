@@ -1,4 +1,3 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 
 import App from "./App";
@@ -6,13 +5,11 @@ import App from "./App";
 import { store } from "./store/index";
 import { Provider } from "react-redux";
 
-const container = document.getElementById("root")!;
-const root = createRoot(container);
+const node = document.getElementById("root")!;
+const root = createRoot(node);
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
 );
